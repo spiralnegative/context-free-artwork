@@ -1,0 +1,158 @@
+startshape STARBURST_CLUSTER
+CF::Background = [ h 213.92 sat 0.7766 b -0.96 ]
+CF::Tile = [ s 800 ]
+
+
+shape STARBURST_CLUSTER
+{
+  STELLA [ x 200 y 300  hue 3 sat 0.9 r 47  a -0.35 s 6 ]
+
+  CLUSTER [  sat 0 ]
+
+  DISTANT [ x rand_static (-100, 100) y rand_static(-50, 50) a rand_static (-0.1, -0.5) ]
+  DISTANT [ x rand_static (-200, 200) y rand_static(-100, 100) s 1.6 rand_static (-0.1, -0.3) ]
+  DISTANT [ x rand_static (-300, 300) y rand_static(-150, 150) ]
+  DISTANT [ x rand_static (-50, 50) y rand_static(-25, 25) s 1.6 ]
+
+  CLOSE [ ]
+  CLOSE [ x rand_static (-150, 150) y rand_static(-100, 100) ]
+
+  NEBULA [ s 200 x -100 hue 210 sat 0.6 b 1  a -0.7 ]
+  NEBULA [ s 200 x -100 hue 230 sat 0.55 b 1  a -0.5 ]
+  NEBULA [ s 160 x 300 h 233.16 sat 0.37 b 1 a -0.8 ]
+  NEBULA [ s 200 y 75 h 265.70 sat 0.3779 b 0.8564 a -0.1 ]
+  NEBULA [ s 200 h 223.15 sat 0.3874 b 1 a -0.2 ]
+  NEBULA [ s 200 x 200 y 200  hue 230 sat 0.6 b 1  a -0.4 ]
+}
+
+
+shape CLUSTER
+{
+  loop 50  [ ] DC [ ]
+}
+
+
+shape DC
+rule  {
+  DC [ x 8 ]
+}
+
+rule {
+  DC [ r 223 ]
+}
+
+rule 0.02 {
+  STELLA [ s 0.7  hue 30 sat 0.5 b 1 ]
+}
+
+
+shape DISTANT
+{
+  loop 200  [ s rand_static (0.98, 1) ] D1 [ ]
+}
+
+
+shape D1
+rule 0.9 {
+  D1 [ x 20 ]
+}
+
+rule 0.1 {
+  D1 [ x 0.1 ]
+}
+
+rule {
+  D1 [ y 15 ]
+}
+
+rule {
+  D1 [ r 210 ]
+}
+
+rule {
+  D1 [ x 50 ]
+}
+
+rule 0.1 {
+  D2 [
+    hue rand_static (15, 18)
+    sat 0.7
+    b 1
+    s 1.5
+  ]
+}
+
+
+shape D2
+{
+  CIRCLE [ s 2 a -0.4 ]
+}
+
+
+shape CLOSE
+{
+  loop 100  [ s rand_static (0.85, 1) ] C1 [ ]
+}
+
+
+shape C1
+rule {
+  C1 [ x 20 ]
+}
+
+rule {
+   C1 [ r 200 ]
+}
+
+rule 0.01 {
+  C2 [
+    hue 19
+    sat 0.45
+    b 1
+    s 3
+   ]
+}
+
+
+shape C2
+{
+  STELLA [ a -0.5]
+}
+
+
+shape STELLA
+{
+   ST1 [ ]
+  ST2 [ ]
+}
+
+
+shape ST1
+{
+  CIRCLE [ sat 0 b 1  z 1 s 12 a -0.9 ]
+  CIRCLE [ sat 0 b 1  s 25 2 a -0.94 ]
+  CIRCLE [ sat 0 b 1  s 2 25 a -0.94 ]
+  ST1 [ s 0.9 z 1 ]
+}
+
+
+shape ST2
+{
+  CIRCLE [ h 48.47 sat -0.7 b 1 z 100 s 5 a -0.978 ]
+  ST2 [ s 0.97 ]
+}
+
+
+shape NEBULA
+rule {
+  NEBULA [ s 0.999 x 0.08 r 20 ]
+  CIRCLE [ s 0.4  b 1 sat 0 a -0.99 ]
+}
+
+rule {
+  NEBULA [ x 0.07 ]
+}
+
+rule {
+  NEBULA [ y 0.03 ]
+}
