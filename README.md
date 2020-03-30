@@ -1,14 +1,12 @@
 # context-free-artwork
-Images, generated with [Context Free](https://github.com/MtnViewJohn/context-free). Some of the project files were initially written in ContextFree Version 2 (many years ago) and [automatically translated to Version 3](https://www.contextfreeart.org/gallery/translate.php).
+Images, generated with [Context Free](https://www.contextfreeart.org/index.html). The description of an image is in the form of a **context free** grammar and is called a `cfdg` file (context free design grammar). Some of the files were initially written in **Context Free Version 2** (many years ago) and [automatically translated to Version 3](https://www.contextfreeart.org/gallery/translate.php).
 
-![alt text](https://github.com/spiralnegative/context-free-artwork/blob/master/cosmic/cosmic_PIPHRD.png)
+![cosmic](https://github.com/spiralnegative/context-free-artwork/blob/master/cosmic/cosmic_PIPHRD.png)
 
 ## How to use
-Install Context Free and run:
+[Install Context Free](https://www.contextfreeart.org/downloads.html) depending on your operating system. Open a chosen `cfdg` file and generate an image.
+
+On Linux:
 ```
-./<path-to-context-free>/cfdg -s <size> project/project.cfdg <path>/<name>.png [-v <variation>]
-```
-Example:
-```
-~/ContextFreeSource3.2/cfdg -s 565 cosmic/cosmic.cfdg ~/cosmic.png -v PIPHRD
+cfdg -s 565 cosmic/cosmic.cfdg ~/output/cosmic.png -v PIPHRD
 ```
