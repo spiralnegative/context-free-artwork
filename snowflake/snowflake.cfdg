@@ -1,0 +1,12 @@
+startshape SNOWFLAKE
+
+shape SNOWFLAKE
+{
+  loop 9 [ r (360/9) ] BRANCH []
+}
+
+shape BRANCH
+{
+  TRIANGLE [ h 160 b 0.8 sat 1 ]
+  BRANCH [ s 0.9 y -0.2 a -0.2 h 8 ]
+}
